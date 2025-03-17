@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6npkdiiov25l"]
+
+[ext_resource type="Script" uid="uid://cetmjhlynd8xa" path="res://character_body_2d.gd" id="1_ij6vw"]
+[ext_resource type="Texture2D" uid="uid://ca4vqp3e6m1xy" path="res://icon.svg" id="2_ghijl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_44cfe"]
+radius = 32.0156
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1, 65)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_ij6vw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ghijl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 31)
+shape = SubResource("CircleShape2D_44cfe")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bndbtnes5oy2y"]
+
+[ext_resource type="Texture2D" uid="uid://c1c0mlujige38" path="res://iso_tileset.png" id="1_1n30v"]
+[ext_resource type="Script" uid="uid://cfeojppo3o33" path="res://tile_map.gd" id="2_35kre"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03na7"]
+texture = ExtResource("1_1n30v")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 8, 16, 16, 0, 24, -16, 16)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, -8)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 0)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, -8)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, -8)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, -8)
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 0)
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, -8)
+6:0/0 = 0
+6:0/0/texture_origin = Vector2i(0, -8)
+
+[sub_resource type="TileSet" id="TileSet_xftlc"]
+tile_shape = 1
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(32, 16)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_03na7")
+
+[node name="TileMap" type="TileMap"]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_xftlc")
+format = 2
+layer_0/y_sort_enabled = true
+layer_1/name = "Layer1"
+layer_1/y_sort_enabled = true
+layer_1/y_sort_origin = 1
+layer_1/z_index = 1
+layer_2/name = "Layer2"
+layer_2/y_sort_enabled = true
+layer_2/y_sort_origin = 2
+layer_2/z_index = 2
+script = ExtResource("2_35kre")
